@@ -2,6 +2,7 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'package:flutter/material.dart';
+
 import '../theme/eridian_theme.dart';
 import 'eridian_glyph.dart';
 
@@ -100,13 +101,16 @@ class RotorCylinder extends StatelessWidget {
               AnimatedSwitcher(
                 duration: const Duration(milliseconds: 280),
                 transitionBuilder: (Widget child, Animation<double> animation) {
-                  final inAnimation = Tween<Offset>(
-                    begin: const Offset(0.0, -0.65),
-                    end: Offset.zero,
-                  ).animate(CurvedAnimation(
-                    parent: animation,
-                    curve: Curves.easeOutBack,
-                  ));
+                  final inAnimation =
+                      Tween<Offset>(
+                        begin: const Offset(0.0, -0.65),
+                        end: Offset.zero,
+                      ).animate(
+                        CurvedAnimation(
+                          parent: animation,
+                          curve: Curves.easeOutBack,
+                        ),
+                      );
                   return SlideTransition(
                     position: inAnimation,
                     child: FadeTransition(opacity: animation, child: child),

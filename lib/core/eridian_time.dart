@@ -15,17 +15,20 @@ class EridianTime {
   final int sol;
 
   /// Creates an [EridianTime] instance for a specific [ticks] and [sol].
-  const EridianTime({
-    required this.ticks,
-    this.sol = 0,
-  })  : assert(ticks >= 0 && ticks < EridianConstants.ticksPerDay,
-            'Ticks must be between 0 and ${EridianConstants.ticksPerDay - 1}');
+  const EridianTime({required this.ticks, this.sol = 0})
+    : assert(
+        ticks >= 0 && ticks < EridianConstants.ticksPerDay,
+        'Ticks must be between 0 and ${EridianConstants.ticksPerDay - 1}',
+      );
 
   /// Creates an [EridianTime] from an accumulated count of total ticks since epoch.
   factory EridianTime.fromTotalTicks(int totalTicks) {
     if (totalTicks < 0) {
       throw ArgumentError.value(
-          totalTicks, 'totalTicks', 'Total ticks must be non-negative');
+        totalTicks,
+        'totalTicks',
+        'Total ticks must be non-negative',
+      );
     }
     final int sol = totalTicks ~/ EridianConstants.ticksPerDay;
     final int ticks = totalTicks % EridianConstants.ticksPerDay;
@@ -40,14 +43,19 @@ class EridianTime {
     final double totalEarthSeconds = duration.inMicroseconds / 1000000.0;
     if (totalEarthSeconds < 0) {
       throw ArgumentError.value(
-          duration, 'duration', 'Duration must be non-negative');
+        duration,
+        'duration',
+        'Duration must be non-negative',
+      );
     }
 
     // Add a microsencond epsilon (1e-6 seconds) to protect against
     // IEEE-754 floating point precision loss and integer microsecond truncation.
     const double epsilonSeconds = 1e-6;
     final int totalTicks =
-        ((totalEarthSeconds + epsilonSeconds) / EridianConstants.earthSecondsPerTick).floor();
+        ((totalEarthSeconds + epsilonSeconds) /
+                EridianConstants.earthSecondsPerTick)
+            .floor();
     return EridianTime.fromTotalTicks(totalTicks);
   }
 

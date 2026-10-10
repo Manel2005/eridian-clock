@@ -31,19 +31,11 @@ abstract final class EridianTheme {
 
   // Box Shadows
   static const List<BoxShadow> glowShadow = [
-    BoxShadow(
-      color: Color(0x3310B981),
-      blurRadius: 16,
-      spreadRadius: 2,
-    ),
+    BoxShadow(color: Color(0x3310B981), blurRadius: 16, spreadRadius: 2),
   ];
 
   static const List<BoxShadow> cardShadow = [
-    BoxShadow(
-      color: Colors.black87,
-      blurRadius: 18,
-      offset: Offset(0, 6),
-    ),
+    BoxShadow(color: Colors.black87, blurRadius: 18, offset: Offset(0, 6)),
   ];
 
   /// Builds the high-contrast dark theme for the application.
@@ -65,10 +57,7 @@ abstract final class EridianTheme {
           side: const BorderSide(color: border),
         ),
       ),
-      dividerTheme: const DividerThemeData(
-        color: borderSubtle,
-        thickness: 1,
-      ),
+      dividerTheme: const DividerThemeData(color: borderSubtle, thickness: 1),
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,

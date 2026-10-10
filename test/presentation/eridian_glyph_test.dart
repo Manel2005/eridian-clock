@@ -7,13 +7,13 @@ import 'package:eridian_clock/presentation/widgets/eridian_glyph.dart';
 
 void main() {
   group('EridianGlyph Widget', () {
-    testWidgets('renders all 6 digits without error', (WidgetTester tester) async {
+    testWidgets('renders all 6 digits without error', (
+      WidgetTester tester,
+    ) async {
       for (int d = 0; d < 6; d++) {
         await tester.pumpWidget(
           MaterialApp(
-            home: Scaffold(
-              body: EridianGlyph(digit: d, size: 48),
-            ),
+            home: Scaffold(body: EridianGlyph(digit: d, size: 48)),
           ),
         );
         expect(find.byType(EridianGlyph), findsOneWidget);

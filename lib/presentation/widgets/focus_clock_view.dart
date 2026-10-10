@@ -2,6 +2,7 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'package:flutter/material.dart';
+
 import '../../core/constants.dart';
 import '../../core/eridian_time.dart';
 import '../theme/eridian_theme.dart';
@@ -50,7 +51,10 @@ class FocusClockView extends StatelessWidget {
           // Centered Mechanical Rotors Assembly
           Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+                vertical: 24.0,
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -82,7 +86,10 @@ class FocusClockView extends StatelessWidget {
 
                   // Enlarged 3D Rotors Housing
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 28),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 28,
+                    ),
                     decoration: BoxDecoration(
                       color: const Color(0xFF0E131C),
                       borderRadius: BorderRadius.circular(24),
@@ -104,9 +111,13 @@ class FocusClockView extends StatelessWidget {
                       fit: BoxFit.scaleDown,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: List.generate(EridianConstants.rotorCount, (index) {
+                        children: List.generate(EridianConstants.rotorCount, (
+                          index,
+                        ) {
                           return Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 7.0),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 7.0,
+                            ),
                             child: RotorCylinder(
                               digit: digits[index],
                               label: rotorLabels[index],

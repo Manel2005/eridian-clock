@@ -2,6 +2,7 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'package:flutter/material.dart';
+
 import '../../core/constants.dart';
 import '../../core/eridian_time.dart';
 import '../theme/eridian_theme.dart';
@@ -17,12 +18,20 @@ class ConverterView extends StatefulWidget {
 
 class _ConverterViewState extends State<ConverterView> {
   // Earth Input Controllers
-  final TextEditingController _hoursController = TextEditingController(text: '12');
-  final TextEditingController _minutesController = TextEditingController(text: '00');
-  final TextEditingController _secondsController = TextEditingController(text: '00');
+  final TextEditingController _hoursController = TextEditingController(
+    text: '12',
+  );
+  final TextEditingController _minutesController = TextEditingController(
+    text: '00',
+  );
+  final TextEditingController _secondsController = TextEditingController(
+    text: '00',
+  );
 
   // Eridian Input Controller
-  final TextEditingController _ticksController = TextEditingController(text: '3888');
+  final TextEditingController _ticksController = TextEditingController(
+    text: '3888',
+  );
 
   EridianTime _convertedFromEarth = const EridianTime(ticks: 0);
   Duration _convertedFromTicks = Duration.zero;
@@ -119,8 +128,10 @@ class _ConverterViewState extends State<ConverterView> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text('Eridian Sol & Ticks:',
-                                  style: TextStyle(color: EridianTheme.textMuted)),
+                              const Text(
+                                'Eridian Sol & Ticks:',
+                                style: TextStyle(color: EridianTheme.textMuted),
+                              ),
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
@@ -140,8 +151,10 @@ class _ConverterViewState extends State<ConverterView> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text('Base-6 Digits:',
-                                  style: TextStyle(color: EridianTheme.textMuted)),
+                              const Text(
+                                'Base-6 Digits:',
+                                style: TextStyle(color: EridianTheme.textMuted),
+                              ),
                               const SizedBox(width: 8),
                               Expanded(
                                 child: Text(
@@ -164,7 +177,9 @@ class _ConverterViewState extends State<ConverterView> {
                                 .toDigits()
                                 .map(
                                   (d) => Padding(
-                                    padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 4.0,
+                                    ),
                                     child: EridianGlyph(
                                       digit: d,
                                       size: 32,
@@ -205,8 +220,10 @@ class _ConverterViewState extends State<ConverterView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text('Equivalent Earth Duration:',
-                              style: TextStyle(color: EridianTheme.textMuted)),
+                          const Text(
+                            'Equivalent Earth Duration:',
+                            style: TextStyle(color: EridianTheme.textMuted),
+                          ),
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
@@ -287,7 +304,10 @@ class _ConverterViewState extends State<ConverterView> {
       ),
       decoration: InputDecoration(
         labelText: label,
-        labelStyle: const TextStyle(color: EridianTheme.textMuted, fontSize: 12),
+        labelStyle: const TextStyle(
+          color: EridianTheme.textMuted,
+          fontSize: 12,
+        ),
         filled: true,
         fillColor: EridianTheme.surfaceElevated,
         border: OutlineInputBorder(
@@ -302,7 +322,10 @@ class _ConverterViewState extends State<ConverterView> {
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: EridianTheme.emeraldGlow),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 12,
+        ),
       ),
     );
   }

@@ -2,8 +2,10 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'core/constants.dart';
 import 'core/eridian_time.dart';
 import 'presentation/theme/eridian_theme.dart';
@@ -257,20 +259,26 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
             destinations: const [
               NavigationDestination(
                 icon: Icon(Icons.access_time),
-                selectedIcon:
-                    Icon(Icons.access_time_filled, color: EridianTheme.emeraldGlow),
+                selectedIcon: Icon(
+                  Icons.access_time_filled,
+                  color: EridianTheme.emeraldGlow,
+                ),
                 label: 'Clock',
               ),
               NavigationDestination(
                 icon: Icon(Icons.swap_horiz),
-                selectedIcon:
-                    Icon(Icons.swap_horiz, color: EridianTheme.petrovaCyan),
+                selectedIcon: Icon(
+                  Icons.swap_horiz,
+                  color: EridianTheme.petrovaCyan,
+                ),
                 label: 'Converter',
               ),
               NavigationDestination(
                 icon: Icon(Icons.science_outlined),
-                selectedIcon:
-                    Icon(Icons.science, color: EridianTheme.emeraldGlow),
+                selectedIcon: Icon(
+                  Icons.science,
+                  color: EridianTheme.emeraldGlow,
+                ),
                 label: 'Experiment',
               ),
             ],

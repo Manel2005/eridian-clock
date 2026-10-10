@@ -5,11 +5,7 @@ import 'constants.dart';
 import 'eridian_time.dart';
 
 /// State of the Eridian experiment stopwatch.
-enum EridianStopwatchState {
-  initial,
-  running,
-  paused,
-}
+enum EridianStopwatchState { initial, running, paused }
 
 /// An experiment stopwatch recreating Ryland Grace's measurement in Chapter 10.
 ///

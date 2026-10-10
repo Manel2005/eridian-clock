@@ -9,8 +9,9 @@ import 'package:eridian_clock/presentation/widgets/focus_clock_view.dart';
 import 'package:eridian_clock/presentation/widgets/rotor_cylinder.dart';
 
 void main() {
-  testWidgets('EridianClockApp renders clock and navigation smoke test',
-      (WidgetTester tester) async {
+  testWidgets('EridianClockApp renders clock and navigation smoke test', (
+    WidgetTester tester,
+  ) async {
     tester.view.physicalSize = const Size(1280, 800);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(() => tester.view.resetPhysicalSize());

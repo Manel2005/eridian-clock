@@ -2,6 +2,7 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'package:flutter/material.dart';
+
 import '../theme/eridian_theme.dart';
 import 'eridian_glyph.dart';
 
@@ -54,7 +55,11 @@ class LoreDialog extends StatelessWidget {
                       'However, their manipulation organs consist of two hands with three fingers each, '
                       'giving them six fingers total. As humans naturally developed base-10 from 10 fingers, '
                       'Eridians naturally count in base-6 (digits 0 through 5).',
-                      style: TextStyle(color: EridianTheme.textSecondary, height: 1.45, fontSize: 13),
+                      style: TextStyle(
+                        color: EridianTheme.textSecondary,
+                        height: 1.45,
+                        fontSize: 13,
+                      ),
                     ),
                     const SizedBox(height: 16),
 
@@ -62,7 +67,11 @@ class LoreDialog extends StatelessWidget {
                     const Text(
                       'Because Eridians perceive their world through echolocation and tactile sensation, '
                       'their numeral glyphs are defined by the count of straight line segments:',
-                      style: TextStyle(color: EridianTheme.textSecondary, height: 1.45, fontSize: 13),
+                      style: TextStyle(
+                        color: EridianTheme.textSecondary,
+                        height: 1.45,
+                        fontSize: 13,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Container(
@@ -77,7 +86,11 @@ class LoreDialog extends StatelessWidget {
                         children: List.generate(6, (digit) {
                           return Column(
                             children: [
-                              EridianGlyph(digit: digit, size: 28, strokeWidth: 2.8),
+                              EridianGlyph(
+                                digit: digit,
+                                size: 28,
+                                strokeWidth: 2.8,
+                              ),
                               const SizedBox(height: 6),
                               Text(
                                 '$digit',
@@ -102,7 +115,11 @@ class LoreDialog extends StatelessWidget {
                       '• Stopwatch Measurement: 511.0 Earth seconds.\n'
                       '• 1 Eridian Tick = 511.0 / 216 ≈ 2.36574 Earth seconds.\n'
                       '• Full Eridian Day (Sol) = 6⁵ = 7,776 ticks ≈ 18,396s (~5.11 hours).',
-                      style: TextStyle(color: EridianTheme.textSecondary, height: 1.45, fontSize: 13),
+                      style: TextStyle(
+                        color: EridianTheme.textSecondary,
+                        height: 1.45,
+                        fontSize: 13,
+                      ),
                     ),
                   ],
                 ),

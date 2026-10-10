@@ -2,6 +2,7 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'package:flutter/material.dart';
+
 import '../../core/constants.dart';
 import '../../core/eridian_time.dart';
 import '../theme/eridian_theme.dart';
@@ -48,7 +49,9 @@ class ClockDisplay extends StatelessWidget {
                 children: [
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 12, vertical: 6),
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: EridianTheme.surfaceElevated,
                       borderRadius: BorderRadius.circular(20),
@@ -83,7 +86,9 @@ class ClockDisplay extends StatelessWidget {
                   const SizedBox(width: 10),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 6),
+                      horizontal: 10,
+                      vertical: 6,
+                    ),
                     decoration: BoxDecoration(
                       color: EridianTheme.surface,
                       borderRadius: BorderRadius.circular(20),
@@ -106,7 +111,9 @@ class ClockDisplay extends StatelessWidget {
               // The 5 Mechanical Cylinders Housing
               Container(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: 16, vertical: 24),
+                  horizontal: 16,
+                  vertical: 24,
+                ),
                 decoration: BoxDecoration(
                   color: EridianTheme.surface,
                   borderRadius: BorderRadius.circular(20),
@@ -117,8 +124,9 @@ class ClockDisplay extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(EridianConstants.rotorCount,
-                        (index) {
+                    children: List.generate(EridianConstants.rotorCount, (
+                      index,
+                    ) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
                         child: RotorCylinder(
@@ -207,7 +215,9 @@ class ClockDisplay extends StatelessWidget {
                     const Divider(height: 18),
                     _buildReadoutRow(
                       label: 'Earth Duration in Day:',
-                      value: _formatEarthDuration(eridianTime.toEarthDuration()),
+                      value: _formatEarthDuration(
+                        eridianTime.toEarthDuration(),
+                      ),
                       valueColor: EridianTheme.textSecondary,
                     ),
                   ],
@@ -230,7 +240,9 @@ class ClockDisplay extends StatelessWidget {
                       foregroundColor: EridianTheme.textPrimary,
                       side: const BorderSide(color: EridianTheme.border),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 14, vertical: 12),
+                        horizontal: 14,
+                        vertical: 12,
+                      ),
                     ),
                   ),
                   FilledButton.icon(
@@ -239,14 +251,18 @@ class ClockDisplay extends StatelessWidget {
                       isRealtime ? Icons.pause : Icons.play_arrow,
                       size: 18,
                     ),
-                    label: Text(isRealtime ? 'Synced (Earth)' : 'Resume Realtime'),
+                    label: Text(
+                      isRealtime ? 'Synced (Earth)' : 'Resume Realtime',
+                    ),
                     style: FilledButton.styleFrom(
                       backgroundColor: isRealtime
                           ? EridianTheme.surfaceElevated
                           : EridianTheme.emeraldGlow,
                       foregroundColor: Colors.white,
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 12),
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
                     ),
                   ),
                   PopupMenuButton<double>(
@@ -254,14 +270,28 @@ class ClockDisplay extends StatelessWidget {
                     onSelected: onSpeedChanged,
                     color: EridianTheme.surfaceElevated,
                     itemBuilder: (context) => [
-                      const PopupMenuItem(value: 1.0, child: Text('Speed: 1x (Realtime)')),
-                      const PopupMenuItem(value: 6.0, child: Text('Speed: 6x (Rotor 1)')),
-                      const PopupMenuItem(value: 36.0, child: Text('Speed: 36x (Rotor 2)')),
-                      const PopupMenuItem(value: 216.0, child: Text('Speed: 216x (Grace Rotor 3)')),
+                      const PopupMenuItem(
+                        value: 1.0,
+                        child: Text('Speed: 1x (Realtime)'),
+                      ),
+                      const PopupMenuItem(
+                        value: 6.0,
+                        child: Text('Speed: 6x (Rotor 1)'),
+                      ),
+                      const PopupMenuItem(
+                        value: 36.0,
+                        child: Text('Speed: 36x (Rotor 2)'),
+                      ),
+                      const PopupMenuItem(
+                        value: 216.0,
+                        child: Text('Speed: 216x (Grace Rotor 3)'),
+                      ),
                     ],
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 14, vertical: 11),
+                        horizontal: 14,
+                        vertical: 11,
+                      ),
                       decoration: BoxDecoration(
                         color: EridianTheme.surface,
                         borderRadius: BorderRadius.circular(20),
@@ -270,7 +300,11 @@ class ClockDisplay extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(Icons.speed, size: 16, color: EridianTheme.petrovaCyan),
+                          const Icon(
+                            Icons.speed,
+                            size: 16,
+                            color: EridianTheme.petrovaCyan,
+                          ),
                           const SizedBox(width: 6),
                           Text(
                             '${currentSpeed.toInt()}x Speed',
@@ -293,7 +327,9 @@ class ClockDisplay extends StatelessWidget {
                         foregroundColor: EridianTheme.petrovaCyan,
                         side: const BorderSide(color: EridianTheme.border),
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 14, vertical: 12),
+                          horizontal: 14,
+                          vertical: 12,
+                        ),
                       ),
                     ),
                 ],
@@ -315,10 +351,7 @@ class ClockDisplay extends StatelessWidget {
       children: [
         Text(
           label,
-          style: const TextStyle(
-            fontSize: 13,
-            color: EridianTheme.textMuted,
-          ),
+          style: const TextStyle(fontSize: 13, color: EridianTheme.textMuted),
         ),
         const SizedBox(width: 8),
         Expanded(

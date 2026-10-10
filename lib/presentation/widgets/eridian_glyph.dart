@@ -2,6 +2,7 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'package:flutter/material.dart';
+
 import '../theme/eridian_theme.dart';
 
 /// A custom vector-rendered Eridian numeral glyph (0 through 5).

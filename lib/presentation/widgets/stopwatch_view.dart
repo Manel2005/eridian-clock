@@ -2,7 +2,9 @@
 // Open-source project inspired by Andy Weir's "Project Hail Mary".
 
 import 'dart:async';
+
 import 'package:flutter/material.dart';
+
 import '../../core/constants.dart';
 import '../../core/eridian_stopwatch.dart';
 import '../theme/eridian_theme.dart';
@@ -84,7 +86,11 @@ class _StopwatchViewState extends State<StopwatchView> {
                   children: [
                     const Row(
                       children: [
-                        Icon(Icons.science, size: 18, color: EridianTheme.petrovaCyan),
+                        Icon(
+                          Icons.science,
+                          size: 18,
+                          color: EridianTheme.petrovaCyan,
+                        ),
                         SizedBox(width: 8),
                         Text(
                           'EXPERIMENT: ROTOR 3 LAP TIMING',
@@ -122,7 +128,8 @@ class _StopwatchViewState extends State<StopwatchView> {
                     child: _buildMetricCard(
                       label: 'EARTH STOPWATCH',
                       value: _formatStopwatch(_stopwatch.elapsedEarthDuration),
-                      subtitle: '${_stopwatch.elapsedEarthSeconds.toStringAsFixed(1)}s elapsed',
+                      subtitle:
+                          '${_stopwatch.elapsedEarthSeconds.toStringAsFixed(1)}s elapsed',
                       color: EridianTheme.petrovaCyan,
                     ),
                   ),
@@ -144,7 +151,10 @@ class _StopwatchViewState extends State<StopwatchView> {
 
               // The Mechanical Rotors
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 20),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 14,
+                  vertical: 20,
+                ),
                 decoration: BoxDecoration(
                   color: EridianTheme.surface,
                   borderRadius: BorderRadius.circular(16),
@@ -160,7 +170,9 @@ class _StopwatchViewState extends State<StopwatchView> {
                   fit: BoxFit.scaleDown,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(EridianConstants.rotorCount, (index) {
+                    children: List.generate(EridianConstants.rotorCount, (
+                      index,
+                    ) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
                         child: RotorCylinder(
@@ -195,10 +207,14 @@ class _StopwatchViewState extends State<StopwatchView> {
                           : 'Start Experiment',
                     ),
                     style: FilledButton.styleFrom(
-                      backgroundColor: _stopwatch.state == EridianStopwatchState.running
+                      backgroundColor:
+                          _stopwatch.state == EridianStopwatchState.running
                           ? EridianTheme.surfaceElevated
                           : EridianTheme.emeraldGlow,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 14,
+                      ),
                     ),
                   ),
                   OutlinedButton.icon(
@@ -208,7 +224,10 @@ class _StopwatchViewState extends State<StopwatchView> {
                     style: OutlinedButton.styleFrom(
                       foregroundColor: EridianTheme.textSecondary,
                       side: const BorderSide(color: EridianTheme.border),
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 14,
+                      ),
                     ),
                   ),
                   // Quick warp button to jump near the 216 tick mark
@@ -221,7 +240,10 @@ class _StopwatchViewState extends State<StopwatchView> {
                     style: OutlinedButton.styleFrom(
                       foregroundColor: EridianTheme.petrovaCyan,
                       side: const BorderSide(color: EridianTheme.petrovaCyan),
-                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 14),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 14,
+                        vertical: 14,
+                      ),
                     ),
                     child: const Text('Jump to 210 Ticks'),
                   ),

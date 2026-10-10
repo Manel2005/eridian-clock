@@ -61,12 +61,15 @@ void main() {
       expect(time.toGlyphString(), equals('ℓℓIℓℓ'));
     });
 
-    test('tick 216 (Rotor 3 - Grace stopwatch lap) -> [0, 1, 0, 0, 0] -> ℓIℓℓℓ', () {
-      const time = EridianTime(ticks: 216);
-      expect(time.toDigits(), equals([0, 1, 0, 0, 0]));
-      expect(time.toBase6String(), equals('01000'));
-      expect(time.toGlyphString(), equals('ℓIℓℓℓ'));
-    });
+    test(
+      'tick 216 (Rotor 3 - Grace stopwatch lap) -> [0, 1, 0, 0, 0] -> ℓIℓℓℓ',
+      () {
+        const time = EridianTime(ticks: 216);
+        expect(time.toDigits(), equals([0, 1, 0, 0, 0]));
+        expect(time.toBase6String(), equals('01000'));
+        expect(time.toGlyphString(), equals('ℓIℓℓℓ'));
+      },
+    );
 
     test('tick 1296 (Rotor 4 advances) -> [1, 0, 0, 0, 0] -> Iℓℓℓℓ', () {
       const time = EridianTime(ticks: 1296);
@@ -75,13 +78,16 @@ void main() {
       expect(time.toGlyphString(), equals('Iℓℓℓℓ'));
     });
 
-    test('tick 7775 (Maximum tick before rollover) -> [5, 5, 5, 5, 5] -> ∀∀∀∀∀', () {
-      const time = EridianTime(ticks: 7775);
-      expect(time.toDigits(), equals([5, 5, 5, 5, 5]));
-      expect(time.toBase6String(), equals('55555'));
-      expect(time.toGlyphString(), equals('∀∀∀∀∀'));
-      expect(time.dayProgress, closeTo(7775 / 7776, 0.0001));
-    });
+    test(
+      'tick 7775 (Maximum tick before rollover) -> [5, 5, 5, 5, 5] -> ∀∀∀∀∀',
+      () {
+        const time = EridianTime(ticks: 7775);
+        expect(time.toDigits(), equals([5, 5, 5, 5, 5]));
+        expect(time.toBase6String(), equals('55555'));
+        expect(time.toGlyphString(), equals('∀∀∀∀∀'));
+        expect(time.dayProgress, closeTo(7775 / 7776, 0.0001));
+      },
+    );
   });
 
   group('EridianTime Arithmetic & Rollovers', () {
@@ -105,13 +111,16 @@ void main() {
   });
 
   group('Earth <-> Eridian Time Conversion', () {
-    test('Grace stopwatch experiment: 511.0 Earth seconds converts to 216 ticks', () {
-      final duration = Duration(microseconds: (511.0 * 1000000).round());
-      final eridianTime = EridianTime.fromEarthDuration(duration);
+    test(
+      'Grace stopwatch experiment: 511.0 Earth seconds converts to 216 ticks',
+      () {
+        final duration = Duration(microseconds: (511.0 * 1000000).round());
+        final eridianTime = EridianTime.fromEarthDuration(duration);
 
-      expect(eridianTime.ticks, equals(216));
-      expect(eridianTime.toBase6String(), equals('01000'));
-    });
+        expect(eridianTime.ticks, equals(216));
+        expect(eridianTime.toBase6String(), equals('01000'));
+      },
+    );
 
     test('round-trip conversion preservation', () {
       for (final testTick in [0, 1, 6, 42, 216, 1296, 5000, 7775]) {
